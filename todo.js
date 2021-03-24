@@ -1,8 +1,5 @@
 /*filter tasks*/
 
-/*delete tasks*/
-
-
 /* add a task*/
 const addTask = document.querySelector('.add');
 const taskItems = document.querySelector('.items')
@@ -34,3 +31,19 @@ addTask.addEventListener('submit', e => {
     }
     
 });
+
+/*delete tasks*/
+taskItems.addEventListener('click', e => {
+
+    if(e.target.classList.contains('fa-trash')){
+        e.target.parentElement.remove();
+    }
+
+});
+
+
+
+
+
+
+

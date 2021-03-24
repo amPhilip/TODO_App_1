@@ -61,7 +61,7 @@ input[type=search], input[type=text]{
 .item{
     width: 50%;
     height:50px;
-    background: #241f3e;
+    background: #292e3c;
     display: flex;
     flex-direction: row;
     margin-bottom: 10px;
