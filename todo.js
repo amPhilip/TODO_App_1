@@ -1,8 +1,7 @@
-/*filter tasks*/
-
-/* add a task*/
 const addTask = document.querySelector('.add');
 const taskItems = document.querySelector('.items')
+const searchItems = document.querySelector('.search input');
+
 
 //create a function that will add the tasks
 
@@ -18,7 +17,7 @@ const todolist = (theTask) => {
     taskItems.innerHTML += html;
 
 }
-
+/* add a task*/
 addTask.addEventListener('submit', e => {
 
     e.preventDefault();
@@ -39,6 +38,34 @@ taskItems.addEventListener('click', e => {
         e.target.parentElement.remove();
     }
 
+});
+
+const filteredWords = (searchWords)=> {
+    //change tthe htmlcollection into an array
+    Array.from(taskItems.children)
+    .filter((todotasks) => {
+        return !todotasks.textContent.toLowerCase().includes(searchWords);
+        })
+    .forEach((todotasks) => {
+        todotasks.classList.add('filtered');
+    })
+
+    Array.from(taskItems.children)
+    .filter((todotasks) => {
+        return todotasks.textContent.toLowerCase().includes(searchWords);
+        })
+    .forEach((todotasks) => {
+        todotasks.classList.remove('filtered');
+    })
+};
+
+/*filter tasks*/
+searchItems.addEventListener('keyup', () => {
+
+    //get the search 
+    const searchWords = searchItems.value.trim().toLowerCase();
+     filteredWords(searchWords);
+    
 });
 
 

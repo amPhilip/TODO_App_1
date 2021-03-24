@@ -80,6 +80,8 @@ i{
 .add{
     margin: auto;
 }
-
+.filtered{
+    display:none !important;
+}
 
 
